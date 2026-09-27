@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#006241">
+<title>STARBUCKS — Quản trị sự thay đổi</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{
+ --green:#006241;--deep:#063b2b;--ink:#132a21;--cream:#f4f0e7;--paper:#fffdf8;
+ --muted:#6d786f;--line:#d9ded8;--gold:#b79a62;--red:#a84c43;--lime:#dfe9c8;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:radial-gradient(#12372b 1px,transparent 1px);background-size:18px 18px;z-index:20}
+a{color:inherit;text-decoration:none}.wrap{max-width:1060px;margin:auto;padding:0 22px}
+.hero{min-height:100svh;background:var(--deep);color:#fff;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero:after{content:"";position:absolute;width:65vw;height:65vw;max-width:720px;max-height:720px;border:1px solid #ffffff28;border-radius:50%;right:-24%;top:-20%;box-shadow:0 0 0 80px #ffffff04,0 0 0 160px #ffffff03}
+.hero-inner{position:relative;z-index:2;padding:80px 22px 58px;width:100%;max-width:1060px;margin:auto}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#b9d8ca}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(54px,13vw,138px);line-height:.84;letter-spacing:-.055em;margin:24px 0 28px;max-width:900px}
+.hero h1 span{color:#d4c19b}
+.hero-sub{max-width:600px;font-size:clamp(16px,2.5vw,21px);color:#dce9e3;line-height:1.55}
+.hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:70px;gap:20px}
+.scroll{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#b9d8ca}
+.stamp{border:1px solid #ffffff35;border-radius:50%;width:92px;height:92px;display:grid;place-items:center;text-align:center;font-size:10px;line-height:1.25;letter-spacing:.08em;text-transform:uppercase;transform:rotate(-8deg)}
+.section{padding:105px 0}.section.white{background:var(--paper)}.section.dark{background:var(--deep);color:#fff}
+.section-head{display:grid;grid-template-columns:110px 1fr;gap:24px;align-items:start;margin-bottom:52px}
+.section-no{font-size:12px;letter-spacing:.16em;font-weight:700;color:var(--green);padding-top:9px}
+.section.dark .section-no{color:#b9d8ca}
+h2{font-family:"Playfair Display",serif;font-size:clamp(38px,6vw,68px);line-height:1.02;letter-spacing:-.035em;margin:0;max-width:820px}
+.intro{font-size:18px;max-width:760px;color:var(--muted);line-height:1.7;margin:0 0 42px}.dark .intro{color:#c9d9d2}
+.quote{font-family:"Playfair Display",serif;font-size:clamp(25px,4vw,44px);line-height:1.18;max-width:850px;border-left:3px solid var(--gold);padding-left:25px;margin:45px 0}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:55px 0 20px;position:relative}
+.flow:before{content:"";position:absolute;left:10%;right:10%;top:33px;height:1px;background:var(--line)}
+.flow-item{position:relative;text-align:center;z-index:1}.dot{width:66px;height:66px;border-radius:50%;background:var(--paper);border:1px solid var(--line);margin:auto;display:grid;place-items:center;font-size:23px;box-shadow:0 8px 22px #16382b12}.flow-item b{display:block;margin-top:16px;font-size:13px}.flow-item small{display:block;color:var(--muted);margin-top:4px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:var(--paper);border:1px solid var(--line);padding:25px;border-radius:4px;min-height:230px;position:relative;overflow:hidden}.card:after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:var(--lime);right:-50px;bottom:-50px;opacity:.6}.card .num{font-size:12px;color:var(--green);font-weight:700;letter-spacing:.12em}.card h3{font-family:"Playfair Display",serif;font-size:25px;margin:25px 0 10px}.card p{font-size:14px;color:var(--muted);line-height:1.65;position:relative;z-index:2}
+.centerpiece{background:var(--green);color:white;border-radius:2px;padding:45px 30px;margin:50px 0;position:relative;overflow:hidden}.centerpiece:after{content:"";position:absolute;width:300px;height:300px;border:1px solid #ffffff25;border-radius:50%;right:-100px;top:-150px}.centerpiece .big{font-family:"Playfair Display",serif;font-size:clamp(35px,6vw,65px);line-height:1.05;max-width:700px;position:relative;z-index:2}.centerpiece p{max-width:650px;color:#d9ebe4;position:relative;z-index:2}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:50px}.tl{padding:28px 18px 10px 0;border-right:1px solid var(--line);min-height:190px}.tl:last-child{border-right:0;padding-left:18px}.tl .year{font-size:11px;color:var(--green);letter-spacing:.16em;font-weight:700}.tl h3{font-size:18px;margin:18px 0 7px}.tl p{font-size:14px;color:var(--muted);line-height:1.55}
+.balance{display:grid;grid-template-columns:1fr 100px 1fr;align-items:stretch;gap:15px;margin-top:45px}.balance-box{padding:32px;border:1px solid var(--line);background:var(--paper)}.balance-box h3{font-family:"Playfair Display",serif;font-size:29px;margin:0 0 22px}.balance-box ul{padding:0;margin:0;list-style:none}.balance-box li{padding:11px 0;border-bottom:1px solid #e5e8e4;font-size:14px}.balance-box li:last-child{border-bottom:0}.balance-center{display:grid;place-items:center;font-size:35px}
+.final{min-height:85svh;display:flex;align-items:center;background:var(--cream)}.final-inner{max-width:900px}.final h2{font-size:clamp(45px,9vw,100px);max-width:900px}.final .line{width:80px;height:3px;background:var(--green);margin:32px 0}.final p{font-size:18px;color:var(--muted);max-width:650px}
+.nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:30;display:grid;gap:8px}.nav a{width:9px;height:9px;border:1px solid #718077;border-radius:50%;background:#ffffffaa}.nav a:hover{background:var(--green)}
+.footer{background:var(--deep);color:#cfe0d9;padding:25px 0;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:760px){
+ .section{padding:75px 0}.section-head{grid-template-columns:1fr;gap:10px}.section-no{padding:0}
+ .flow{grid-template-columns:1fr 1fr;gap:28px}.flow:before{display:none}.cards{grid-template-columns:1fr 1fr}
+ .timeline{grid-template-columns:1fr 1fr}.tl:nth-child(2){border-right:0}.tl:nth-child(3){border-top:1px solid var(--line)}.tl:nth-child(4){border-top:1px solid var(--line);padding-left:0}
+ .balance{grid-template-columns:1fr}.balance-center{height:55px}.nav{display:none}.hero-bottom{margin-top:45px}
+}
+@media(max-width:480px){.cards{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.tl,.tl:nth-child(n){border-right:0;border-top:1px solid var(--line);padding:22px 0}.tl:first-child{border-top:0}.hero h1{font-size:57px}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Nội dung">
+<a href="#s1"></a><a href="#s2"></a><a href="#s3"></a><a href="#s4"></a><a href="#s5"></a><a href="#end"></a>
+</nav>
+
+<header class="hero">
+ <div class="hero-inner">
+  <div class="eyebrow">Case study · Quản trị sự thay đổi</div>
+  <h1>STARBUCKS<br><span>ĐỔI MỚI</span></h1>
+  <p class="hero-sub">Một ly trà sữa nhìn như một thay đổi nhỏ. Nhưng phía sau nó là câu chuyện về cách một tổ chức thích nghi với thị trường mà vẫn giữ bản sắc.</p>
+  <div class="hero-bottom"><div class="scroll">↓ Cuộn để khám phá</div><div class="stamp">Market<br>Change<br>Adapt</div></div>
+ </div>
+</header>
+
+<section class="section" id="s1">
+<div class="wrap">
+ <div class="section-head"><div class="section-no">01 / 05</div><h2>Thay đổi không bắt đầu từ sản phẩm.</h2></div>
+ <p class="intro">Nó bắt đầu từ bên ngoài tổ chức: thị trường F&B cạnh tranh cao, lựa chọn đồ uống ngày càng đa dạng và trà sữa đã trở nên quen thuộc với nhóm khách hàng trẻ.</p>
+ <div class="flow">
+  <div class="flow-item"><div class="dot">🌏</div><b>Thị trường</b><small>Cạnh tranh cao</small></div>
+  <div class="flow-item"><div class="dot">↗</div><b>Xu hướng</b><small>Nhu cầu đổi mới</small></div>
+  <div class="flow-item"><div class="dot">👥</div><b>Khách hàng</b><small>Lựa chọn đa dạng</small></div>
+  <div class="flow-item"><div class="dot">⚠</div><b>Áp lực</b><small>Không thể đứng yên</small></div>
+  <div class="flow-item"><div class="dot">🧋</div><b>Phản ứng</b><small>Đưa trà sữa vào menu</small></div>
+ </div>
+ <div class="quote">“Doanh nghiệp không thay đổi chỉ để làm mới. Thay đổi xuất phát từ áp lực của môi trường và nhu cầu thích nghi.”</div>
+ <p class="intro">Điểm đáng chú ý: Starbucks không đơn giản sao chép một công thức trà sữa phổ biến, mà phát triển dòng riêng với các nền trà như trà đen, ô long và hojicha — một cách tìm điểm cân bằng giữa thị trường Việt Nam và cách tiếp cận riêng của thương hiệu.</p>
+</div>
+</section>
+
+<section class="section white" id="s2">
+<div class="wrap">
+ <div class="section-head"><div class="section-no">02 / 05</div><h2>Một sản phẩm mới không phải điểm kết thúc.</h2></div>
+ <p class="intro">Thị trường luôn vận động. Vì vậy, thích nghi cũng phải là một quá trình liên tục chứ không phải một quyết định diễn ra một lần.</p>
+ <div class="timeline">
+  <div class="tl"><div class="year">MỞ RỘNG</div><h3>Không gian</h3><p>Phát triển hệ thống cửa hàng ngoài những thị trường lớn.</p></div>
+  <div class="tl"><div class="year">ĐỔI MỚI</div><h3>Mô hình</h3><p>Reserve, Reserve Mixology Bar, Starbucks Truck.</p></div>
+  <div class="tl"><div class="year">SỐ HÓA</div><h3>Tiếp cận</h3><p>Nền tảng số và social commerce thay đổi cách kết nối khách hàng.</p></div>
+  <div class="tl"><div class="year">SẢN PHẨM</div><h3>Trà sữa</h3><p>Một bước tiếp theo trong chuỗi thích nghi, không phải đích đến.</p></div>
+ </div>
+</div>
+</section>
+
+<section class="section dark" id="s3">
+<div class="wrap">
+ <div class="section-head"><div class="section-no">03 / 05</div><h2>Một ly trà sữa.<br>Một tổ chức phải chuyển động.</h2></div>
+ <p class="intro">Khách hàng chỉ nhìn thấy món mới. Nhưng để món mới xuất hiện ổn định, nhiều bộ phận phía sau phải cùng thay đổi.</p>
+ <div class="cards">
+  <div class="card"><div class="num">01 · PRODUCT</div><h3>Sản phẩm</h3><p>Công thức, nền trà, nguyên liệu, hương vị.</p></div>
+  <div class="card"><div class="num">02 · BRAND</div><h3>Marketing</h3><p>Khách hàng mục tiêu, thông điệp và vị trí của sản phẩm trong hình ảnh thương hiệu.</p></div>
+  <div class="card"><div class="num">03 · OPERATION</div><h3>Vận hành</h3><p>Đào tạo Barista, quy trình pha chế, nguyên liệu và chuỗi cung ứng.</p></div>
+  <div class="card"><div class="num">04 · EXPERIENCE</div><h3>Trải nghiệm</h3><p>Phù hợp thị trường nhưng không biến Starbucks thành một thương hiệu trà sữa.</p></div>
+ </div>
+ <div class="centerpiece"><div class="big">Một thay đổi ở sản phẩm → kéo theo thay đổi ở nhiều hoạt động khác.</div><p>Đó là lý do thay đổi trong tổ chức mang tính toàn diện.</p></div>
+</div>
+</section>
+
+<section class="section" id="s4">
+<div class="wrap">
+ <div class="section-head"><div class="section-no">04 / 05</div><h2>Thay đổi mở ra cơ hội — nhưng cũng tạo ra bài toán mới.</h2></div>
+ <div class="balance">
+  <div class="balance-box"><h3 style="color:var(--green)">Cơ hội</h3><ul>
+   <li>Mở rộng danh mục sản phẩm</li><li>Tiếp cận thêm khách hàng trẻ</li><li>Tăng mức độ bản địa hóa</li><li>Thích nghi với xu hướng đồ uống</li>
+  </ul></div>
+  <div class="balance-center">⚖</div>
+  <div class="balance-box"><h3 style="color:var(--red)">Thách thức</h3><ul>
+   <li>Cạnh tranh với thương hiệu trà sữa</li><li>Giá và chi phí nguyên liệu</li><li>Chất lượng và vận hành</li><li>Nguy cơ ảnh hưởng bản sắc thương hiệu</li>
+  </ul></div>
+ </div>
+</div>
+</section>
+
+<section class="section white" id="s5">
+<div class="wrap">
+ <div class="section-head"><div class="section-no">05 / 05</div><h2>Bài toán không phải “có thay đổi hay không”.</h2></div>
+ <p class="intro">Bài toán khó hơn là xác định mức độ thay đổi: đủ để phù hợp với khách hàng Việt Nam, nhưng vẫn giữ được sự khác biệt của Starbucks.</p>
+ <div class="flow">
+  <div class="flow-item"><div class="dot">←</div><b>Thay đổi quá ít</b><small>Khó bắt kịp nhu cầu</small></div>
+  <div class="flow-item"><div class="dot">⚠</div><b>Khoảng cân bằng</b><small>Thích nghi có kiểm soát</small></div>
+  <div class="flow-item"><div class="dot">→</div><b>Thay đổi quá nhiều</b><small>Có nguy cơ mất bản sắc</small></div>
+ </div>
+ <div class="centerpiece" style="background:var(--deep)">
+  <div class="big">Thay đổi cái gì?<br>Thay đổi đến đâu?<br>Thay đổi như thế nào?</div>
+  <p>Đó mới là câu hỏi cốt lõi của quản trị sự thay đổi.</p>
+ </div>
+</div>
+</section>
+
+<section class="final" id="end">
+<div class="wrap final-inner">
+ <div class="eyebrow" style="color:var(--green)">Key takeaway</div>
+ <h2>THÍCH NGHI<br><span style="color:var(--green)">NHƯNG KHÔNG</span><br>ĐÁNH MẤT BẢN SẮC.</h2>
+ <div class="line"></div>
+ <p>Starbucks không chỉ thay đổi một món đồ uống. Câu chuyện trà sữa cho thấy cách một tổ chức phản ứng trước môi trường, điều chỉnh nhiều hoạt động cùng lúc và liên tục tìm điểm cân bằng giữa thích nghi với thị trường và duy trì bản sắc.</p>
+</div>
+</section>
+
+<footer class="footer"><div class="wrap">STARBUCKS × CHANGE MANAGEMENT · MINI WEB PRESENTATION</div></footer>
+</body>
+</html>
